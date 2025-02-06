@@ -27,11 +27,20 @@
 <body>
     <h1>Conversor de Medidas</h1>
     <div id="bt" onclick="converter()">Converter</div>
-    <div>Clique no botão acima para Iniciar.</div>
+    <div id="res">Clique no botão acima para Iniciar.</div>
 
     <script>
         function converter() {
-            num = window
+            var num = window.prompt('Digite uma distância em metros (m)')
+            var km =  num / 1000
+            var hm = num / 100
+            var dam = num / 10
+            var dm = num * 10
+            var cm = num * 100
+            var mm = num * 1000
+
+            res.innerHTML = `A distância de ${num} metros, corresponde a...`
+            window.document.write(`${km} quilômetros (Km)`)
         }
     </script>
 </body>
