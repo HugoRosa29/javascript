@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Países</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div#res {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analisando Estrangeiros</h1>
+    <p>Digite aqui seu país: <input type="text" name="p" id="p"></p>
+    <input type="button" value="Enviar" onclick="enviar()">
+    <div id="res"></div>
+
+    <script>
+        function enviar() {
+            var p = window.document.querySelector('input#p')
+            res.innerHTML = `<p>Seu país é <strong>${p.value}</strong>!</p>`
+            if (p.value == 'Brasil') {
+                res.innerHTML += '<p>Sendo assim, você é Brasileiro!</p>'
+            } else {
+                res.innerHTML += '<p>Sendo assim, você é Estrangeiro!</p>'
+            }
+        }
+    </script>
+</body>
+</html>
