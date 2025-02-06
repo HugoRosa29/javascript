@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div {
+            display: inline-block;
+            background-color: lightgray;
+            width: 60px;
+            height: 20px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        div:hover {
+            background-color: rgb(131, 131, 131);
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio das mensagens</h1>
+    <div id="bt1" onclick="b1()">Botão 1</div>
+    <div id="bt2" onclick="b2()">Botão 2</div>
+    <div id="bt3" onclick="b3()">Botão 3</div>
+
+    <script>
+        function b1() {
+            window.alert('Você clicou no 1º Botão!')
+        }
+
+        function b2() {
+            window.alert('Você clicou no 2º Botão!')
+        }
+
+        function b3() {
+            window.alert('Você clicou no 3º Botão!')
+        }
+    </script>
+</body>
+</html>
