@@ -4,49 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificador de Idade</title>
-    <style>
-        body {
-            background-color: rgb(78, 196, 255);
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        div#prin {
-            display: block;
-            margin: auto;
-            background-color: white;
-            color: black;
-            padding: 10px;
-            width: 500px;
-            height: 320px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.468);
-        }
-    </style>
+    <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
-    <h1>Verificador de Idade</h1>
-    <div id="prin">
-        <p>Ano de Nascimento: <input type="text" name="txtnasc" id="txtnasc"></p>
-        <p>Sexo:</p>
-        <p><input type="button" value="Verificar" onclick="clicar()"></p>
-        <div id="resp">Teste</div> 
-    </div>
-    
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section>
+        <div id="prin">
+            <p>Ano de Nascimento: <input type="text" name="txtano" id="txtano"></p>
+            <p>Sexo:
+                <input type="radio" name="radsex" id="mas" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="clicar()">
+            </p>
+        </div>
+        <div id="resp">Preencha os dados acima para ver o resultado!</div>
+    </section>
+    <footer>
+        <p>&copy; Hugo Rosa</p>
+    </footer>
 
-    <script>
-        function clicar() {
-            var agora = new Date()
-            var ano = agora.getFullYear()
-            var txtn = window.document.getElementById(txtnasc)
-            n = Number(txtn.value)
-            idade = ano - n
-            prin.resp.innerHTML = `Você tem ${idade} anos.`
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
