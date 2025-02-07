@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div#bt {
+            display: inline-block;
+            background-color: lightgray;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        div#bt:hover {
+            background-color: rgb(183, 182, 182);
+        }
+
+        mark#rep {
+            background-color: rgba(237, 145, 145, 0.663);
+            color: darkred;
+            font-weight: bold;
+            padding: 2px;
+        }
+
+        mark#rec {
+            background-color: rgba(254, 254, 119, 0.636);
+            color: darkgoldenrod;
+            font-weight: bold;
+            padding: 2px;
+        }
+
+
+        mark#apr {
+            background-color: rgb(126, 242, 126);
+            color: darkgreen;
+            font-weight: bold;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <div id="bt" onclick="notas()">Entrar com as notas</div>
+    <div id="res">Clique no botão acima para informar as notas do aluno.</div>
+
+    <script>
+        function notas() {
+            var nome = window.prompt('Qual é o nome do aluno?')
+            var n1 = Number(window.prompt(`Primeira nota de ${nome}:`))
+            var n2 = Number(window.prompt(`Segunda nota de ${nome}:`))
+            var media = (n1 + n2) / 2
+
+            res.innerHTML = `
+            <h2>Analisando a situação de ${nome}</h2>
+            <p>Com as notas ${n1.toFixed(2).replace('.', ',')} e ${n2.toFixed(2).replace('.', ',')}, a <strong>média é ${media.toFixed(2).replace('.', ',')}</strong></p>
+            `
+            if (media < 3) {
+                res.innerHTML += `
+                Com média abaixo de 3,0, o aluno está <mark id="rep">REPROVADO</mark>
+                `
+            } else if (media < 6) {
+                res.innerHTML += `
+                Com média abaixo de 6,0, o aluno está em <mark id="rec">RECUPERAÇÃO</mark>
+                `
+            } else {
+                res.innerHTML += `
+                Com média acima de 6,0, o aluno está <mark id="apr">APROVADO</mark>
+                `
+            }
+        }
+    </script>
+</body>
+</html>

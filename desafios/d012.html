@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div#bt {
+            display: inline-block;
+            background-color: lightgray;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        div#bt:hover {
+            background-color: rgb(183, 182, 182);
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço Mudou</h1>
+    <div id="bt" onclick="change()">Verificar</div>
+    <div id="res">Clique no botão acima para Iniciar.</div>
+
+    <script>
+        function change() {
+            var antes = Number(window.prompt('Qual era o preço anterior do produto?'))
+            var atual = Number(window.prompt('Qual é o preço atual do produto?'))
+            res.innerHTML = ` 
+            <h2>Analisando os valores informados</h2>
+            <p>O produto custava ${antes.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} e agora custa ${atual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>
+            `
+            if (atual > antes) {
+                var dif = atual - antes
+                var por = (atual / antes - 1) * 100
+                res.innerHTML += `
+                <p>Hoje o produto está mais caro.</p>
+                <p>O preço subiu ${dif.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} em relação ao preço anterior.</p>
+                <p>Uma variação de ${por.toFixed(2).replace('.', ',')}% para cima.</p>
+                `
+            } else {
+                var dif = antes - atual
+                var por = (antes / atual - 1) * 100
+                res.innerHTML += `
+                <p>Hoje o produto está mais barato.</p>
+                <p>O preço caiu ${dif.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} em relação ao preço anterior.</p>
+                <p>Uma variação de ${por.toFixed(2).replace('.', ',')}% para baixo.</p>
+                `
+            }
+        }
+    </script>
+</body>
+</html>
