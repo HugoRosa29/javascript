@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interações JS</title>
+    <title>JavaScript Externo</title>
     <style>
-         body {
+        body {
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        div#bt {
+        button#bt {
+            font-size: 13pt;
             display: inline-block;
             background-color: lightgray;
             padding: 20px;
@@ -19,19 +20,19 @@
             margin-bottom: 20px;
         }
 
-        div#bt:hover {
+        button#bt:hover {
             background-color: rgb(183, 182, 182);
         }
     </style>
 </head>
 <body>
-    <h1>Interagindo com um botão</h1>
-    <div id="bt" onclick="clicar()">Clica em mim!</div>
+    <h1>JavaScript Externo</h1>
+    <button id="bt" onclick="acao1()">Açao 1</button>
+    <button id="bt" onclick="acao2()">Açao 2</button>
+    <button id="bt" onclick="acao3()">Açao 3</button>
+    <button id="bt" onclick="acao4()">Açao 4</button>
+    <div id="res">Aqui vou registrar suas ações com os botões acima.</div>
 
-    <script>
-        function clicar() {
-            window.alert('Você clicou no botão!')
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interações JS</title>
+    <title>Números em JS</title>
     <style>
-         body {
+        body {
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -22,15 +22,24 @@
         div#bt:hover {
             background-color: rgb(183, 182, 182);
         }
+
+        mark {
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
-    <h1>Interagindo com um botão</h1>
-    <div id="bt" onclick="clicar()">Clica em mim!</div>
+    <h1>Trabalhando com Números</h1>
+    <div id="bt" onclick="soma()">Iniciar a soma</div>
+    <div id="res">O resultado vem aqui...</div>
 
     <script>
-        function clicar() {
-            window.alert('Você clicou no botão!')
+        function soma() {
+            var n1 = Number(window.prompt('Digite um número'))
+            var n2 = Number(window.prompt('Digite outro número: '))
+            var soma = n1 + n2
+
+            res.innerHTML = `A soma entre <mark>${n1}</mark> e <mark>${n2}</mark> é igual <strong>${soma}!</strong>`
         }
     </script>
 </body>

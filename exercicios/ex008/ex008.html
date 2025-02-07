@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números em JS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div#bt {
+            display: inline-block;
+            background-color: lightgray;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        div#bt:hover {
+            background-color: rgb(183, 182, 182);
+        }
+    </style>
+</head>
+<body>
+    <h1>Vários cálculos em JS</h1>
+    <div id="bt" onclick="calculo()">Clique aqui para calcular</div>
+    <div id="res">O resultado vem aqui...</div>
+
+    <script>
+        function calculo() {
+            let num = Number(window.prompt('Digite um número: '))
+
+            res.innerHTML = `
+            <p>O número a ser analisado será o <strong>${num}</strong> </p>
+            <hr>
+            <p>O seu valor absoluto é ${Math.abs(num)}</p>
+            <p>A sua parte inteira é ${Math.trunc(num)}</p>
+            <p>O valor inteiro mais próximo é ${Math.round(num)}</p>
+            <p>A sua raiz quadrada é ${Math.sqrt(num)}</p>
+            <p>A sua raiz cúbica é ${Math.cbrt(num)}</p>
+            <p>O valor de ${num}² é ${Math.pow(num, 2)}</p>
+            <p>O valor de ${num}³ é ${Math.pow(num, 3)}</p>
+            `
+        }
+    </script>
+</body>
+</html>

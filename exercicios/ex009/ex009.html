@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button#bt {
+            font-size: 13pt;
+            display: inline-block;
+            background-color: lightgray;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        button#bt:hover {
+            background-color: rgb(183, 182, 182);
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+    <button id="bt" onclick="contar()">Clique em mim</button>
+    <button id="bt" onclick="zerar()">Zerar o Contador</button>
+    <div id="res">O contador está com 0 cliques.</div>
+
+    <script>
+        contador = 0
+
+        function contar() {
+            contador ++
+            res.innerHTML = `O contador está com ${contador} cliques.`
+        }
+
+        function zerar() {
+            contador = 0
+            res.innerHTML = `O contador está com 0 cliques.`
+        }
+    </script>
+</body>
+</html>

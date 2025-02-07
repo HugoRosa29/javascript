@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interações JS</title>
+    <title>Dados com JS</title>
     <style>
-         body {
+        body {
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -25,12 +25,14 @@
     </style>
 </head>
 <body>
-    <h1>Interagindo com um botão</h1>
-    <div id="bt" onclick="clicar()">Clica em mim!</div>
+    <h1>Trabalhando com dados v2.0</h1>
+    <div id="bt" onclick="clicou()">Clique aqui para começar</div>
+    <div id="res">Aqui vai aparecer o resultado...</div>
 
     <script>
-        function clicar() {
-            window.alert('Você clicou no botão!')
+        function clicou() {
+            nome = window.prompt('Qual o seu nome?')
+            res.innerHTML = `Olá, <strong>${nome}</strong>! É um grande prazer te conhecer! &#x1F596`
         }
     </script>
 </body>
