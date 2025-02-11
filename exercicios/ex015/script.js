@@ -1,20 +1,22 @@
 function data() {
-    var agora = new Date()
-    var dia = agora.getDay()
-    var mes = agora.getMonth()
-    var ano = agora.getFullYear()
-    var diasem = agora.getUTCDay()
-    var hora = agora.getHours() 
-    var min = agora.getMinutes()
-    var seg = agora.getSeconds()
+    let meses = new Array('Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez')
+    let semana = new Array ('Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab')
+    let agora = new Date()
+    let dia = agora.getDate()
+    let mes = agora.getMonth()
+    let ano = agora.getFullYear()
+    let diasem = agora.getUTCDay()
+    let hora = agora.getHours() 
+    let min = agora.getMinutes()
+    let seg = agora.getSeconds()
 
     res.innerHTML = `
-    <p>Dia: ${dia}</p>
-    <p>Mês: ${mes}</p>
-    <p>Ano: ${ano}</p>
-    <p>Dia da semana: ${diasem}</p>
-    <p>Hora: ${hora}</p>
-    <p>Minutos: ${min}</p>
-    <p>Segundos: ${seg}</p>
+    <p>Dia: <mark>${dia}</mark></p>
+    <p>Mês: <mark>${meses[mes]}</mark></p>
+    <p>Ano: <mark>${ano}</mark></p>
+    <p>Dia da semana: <mark>${semana[diasem]}</mark></p>
+    <p>Hora: <mark>${hora}</mark></p>
+    <p>Minutos: <mark>${min}</mark></p>
+    <p>Segundos: <mark>${seg}</mark></p>
     `
 }
