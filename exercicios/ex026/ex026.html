@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem inteligente</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1, h2 {
+            font-family: cursive;
+        }
+
+        button#bt {
+            font-size: 15pt;
+            display: inline-block;
+            background-color: lightgray;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        button#bt:hover {
+            background-color: rgb(183, 182, 182);
+        }
+
+        input[type=submit] { 
+            background-color: green; 
+            color: white; 
+            font-size: 12pt; 
+            padding: 5px;
+        }
+
+        mark {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contagem "inteligente"</h1>
+    <p>Use qualquer valor nas caixas, simule contagens crescentes e regressivas. Use também valores negativos.</p>
+    <form action="#" method="get">
+        <p>
+            <label for="fnum1">Valor Inicial:</label>
+            <input type="number" name="num1" id="fnum1" placeholder="Início da contagem">
+        </p>
+        <p>
+            <label for="fnum2">Valor final:</label>
+            <input type="number" name="num2" id="fnum2" placeholder="Final da contagem">
+        </p>
+        <input type="submit" value="Contar" formaction="javascript:contagem()">
+    </form>
+    <div id="res"><p>Preencha os dados acima e aperte o botão.</p></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
